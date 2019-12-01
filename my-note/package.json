@@ -1,0 +1,33 @@
+{
+    "name": "my-note",
+    "displayName": "My Note",
+    "description": "Syntax highlighting for my note",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Themes"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "mynote",
+            "aliases": ["MyNote", "mynote"],
+            "extensions": [".MyNote"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "mynote",
+            "scopeName": "source.mynote",
+            "path": "./syntaxes/mynote.tmLanguage.json"
+        }],
+        "themes": [
+            {
+                "label": "MyNoteTheme",
+                "uiTheme": "vs",
+                "path": "./themes/MyNoteTheme-color-theme.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,62 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MyNote",
+	"patterns": [
+		{"include": "#topic"},
+		{"include": "#head"},
+		{"include": "#list"},
+		{"include": "#keywords"},
+		{"include": "#emphasis"},
+		{"include": "#reference"}
+	],
+	"repository": {
+		"topic": {
+			"name": "topic.mynote",
+			"match": "^>>>>.*"
+		},
+		"head": {
+			"patterns": [
+				{
+					"name": "head1.mynote",
+					"match": "^\\s*=#=.*"
+				},
+				{
+					"name": "head2.mynote",
+					"match": "^\\s*=##=.*"
+				},
+				{
+					"name": "head3.mynote",
+					"match": "^\\s*=###=.*"
+				}
+			]
+		},
+		"list": {
+			"match": "^\\s*(-\\.|\\*\\))(.*)",
+			"captures": {
+				"2": {
+					"name": "list.mynote"
+				}
+			}			
+		},
+		"keywords": {
+			"name": "keyword.mynote",
+			"match": "\\b(troubleshooting|workaround|solution):"
+		},
+		"emphasis": {
+			"name": "emphasis.mynote",
+			"match": "\\bNOTE:|\\bTODO:|\\s==>|^==>|\\*\\*.*\\*\\*"
+		},
+		"reference": {
+			"patterns": [{
+				"match": "^\\s*\\|>{1,3}(.*)",
+				"captures": {
+					"1": {
+						"name": "reference.mynote"
+					}
+				}
+
+			}]
+		}
+	},
+	"scopeName": "source.mynote"
+}

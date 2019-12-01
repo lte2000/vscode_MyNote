@@ -1,0 +1,9 @@
+{
+    "folding": {
+		"offSide": true,
+		"markers": {
+			"start": "^>>>>.*",
+			"end": "^_{80}"
+		}
+	}
+}
